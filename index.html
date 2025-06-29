@@ -52,30 +52,36 @@
       text-align: center;
       transition: all 0.3s ease;
     }
-.card::after {
+.card {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .card::after {
       content: '';
       position: absolute;
       top: 0;
-      left: -75%;
-      width: 50%;
+      left: -60%;
+      width: 40%;
       height: 100%;
       background: linear-gradient(
         120deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0.1) 100%
+        rgba(255, 255, 255, 0.02) 0%,
+        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.02) 100%
       );
       transform: skewX(-20deg);
-      animation: shimmer 3s infinite;
+      animation: shimmer 6s ease-in-out infinite;
+      border-radius: inherit;
       z-index: 1;
     }
 
     @keyframes shimmer {
       0% {
-        left: -75%;
+        left: -60%;
       }
       100% {
-        left: 125%;
+        left: 120%;
       }
     }
 
