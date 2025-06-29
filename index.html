@@ -57,32 +57,49 @@
       overflow: hidden;
     }
 
-    .card::after {
+    .card::after,
+    .card::before {
       content: '';
       position: absolute;
       top: 0;
-      left: -60%;
       width: 40%;
       height: 100%;
+      transform: skewX(-20deg);
+      border-radius: inherit;
+      z-index: 1;
+      pointer-events: none;
+    }
+
+    .card::after {
+      left: -60%;
       background: linear-gradient(
         120deg,
         rgba(255, 255, 255, 0.02) 0%,
-        rgba(255, 255, 255, 0.15) 50%,
+        rgba(255, 255, 255, 0.12) 50%,
         rgba(255, 255, 255, 0.02) 100%
       );
-      transform: skewX(-20deg);
       animation: shimmer 6s ease-in-out infinite;
-      border-radius: inherit;
-      z-index: 1;
+    }
+
+    .card::before {
+      left: -100%;
+      background: linear-gradient(
+        135deg,
+        rgba(255, 255, 255, 0.015) 0%,
+        rgba(173, 216, 230, 0.08) 50%,
+        rgba(255, 255, 255, 0.015) 100%
+      );
+      animation: shimmer2 10s ease-in-out infinite;
     }
 
     @keyframes shimmer {
-      0% {
-        left: -60%;
-      }
-      100% {
-        left: 120%;
-      }
+      0% { left: -60%; }
+      100% { left: 120%; }
+    }
+
+    @keyframes shimmer2 {
+      0% { left: -100%; }
+      100% { left: 130%; }
     }
 
     .card > * {
