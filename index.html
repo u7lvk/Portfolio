@@ -11,7 +11,7 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom right, #0f2027, #203a43, #2c5364);
+      background: linear-gradient(to bottom right, #16222A, #3A6073, #1A2980);
       color: #ffffff;
     }
     header {
@@ -58,7 +58,21 @@
       text-decoration: none;
       font-weight: bold;
     }
-  </style>
+  
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%; }
+      50% { background-position: 100% 50%; }
+      100% { background-position: 0% 50%; }
+    }
+
+    .card:hover {
+      transform: translateY(-5px);
+      background: rgba(255, 255, 255, 0.1);
+      box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
+      transition: all 0.3s ease;
+    }
+
+</style>
 </head>
 <body>
   <header>
