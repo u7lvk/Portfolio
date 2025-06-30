@@ -124,20 +124,7 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
     }
-    .header-card {
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
-  margin: auto;
-  max-width: 600px;
-  text-align: center;
-  transition: all 0.3s ease;
-    }
-    .header-card-row {
+        .header-card-row {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -162,7 +149,11 @@
   box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
 }
 
-.header-info h1 {
+.header-info {
+  flex: 1;
+  min-width: 200px;
+}
+  .header-info h1 {
   font-size: 1.8rem;
   margin: 0;
 }
@@ -188,6 +179,66 @@
   color: #74b9ff;
   margin-right: 6px;
 }
+.header-card-row {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+}
+
+.header-logo img {
+  width: 110px;
+  height: 110px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.header-info {
+  flex: 1;
+  min-width: 200px;
+}
+
+.header-info h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.header-info h2 {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.2rem 0 0.8rem 0;
+}
+
+.contact-details {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.95rem;
+  color: #aaa;
+}
+
+.contact-details i {
+  color: #74b9ff;
+  margin-right: 8px;
+}
+
+.contact-details a {
+  color: #74b9ff;
+  text-decoration: none;
+}
+
+.contact-details a:hover {
+  text-decoration: underline;
+}    
 
 </style>
 
@@ -213,13 +264,26 @@
       <h1>Umer Khokhar</h1>
       <h2>Aspiring Video Editor</h2>
       <div class="contact-details">
-        <span><i class="fas fa-phone"></i> +92 336 9450420</span> |
-        <span><i class="fas fa-envelope"></i> umerkhokhar389@gmail.com</span> |
-        <span><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan</span>
-        <br />
-        <span><i class="fab fa-instagram"></i> <a href="https://instagram.com/7xer.fx" target="_blank">@7xer.fx</a></span> |
-        <span><i class="fas fa-file-download"></i> <a href="Umer_Khokhar_CV.pdf" download>Resume (PDF)</a></span> |
-        <span><i class="fas fa-book"></i> <a href="https://github.com/u7lvk/Portfolio?tab=readme-ov-file#-7xerfx--video-editing-portfolio" target="_blank">README.md</a></span>
+        <div>
+          <i class="fas fa-phone"></i>
+          <a href="tel:+923369450420">+92 336 9450420</a>
+        </div>
+        <div>
+          <i class="fas fa-envelope"></i>
+          <a href="mailto:umerkhokhar389@gmail.com">umerkhokhar389@gmail.com</a>
+        </div>
+        <div>
+          <i class="fab fa-instagram"></i>
+          <a href="https://instagram.com/7xer.fx" target="_blank">@7xer.fx</a>
+        </div>
+        <div>
+          <i class="fas fa-file-download"></i>
+          <a href="Umer_Khokhar_CV.pdf" download>Resume (PDF)</a>
+        </div>
+        <div>
+          <i class="fas fa-book"></i>
+          <a href="https://github.com/u7lvk/Portfolio?tab=readme-ov-file#-7xerfx--video-editing-portfolio" target="_blank">README.md</a>
+        </div>
       </div>
     </div>
   </div>
