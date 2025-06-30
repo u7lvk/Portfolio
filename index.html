@@ -14,7 +14,7 @@
       font-family: 'Segoe UI', sans-serif;
       background: linear-gradient(to bottom right, 
                                    #0a2342,   /* Deep Navy Blue */
-                                   #8675a9,   /* Muted Purple */
+                                   #59437a,   /* Muted Purple */
                                    #472c2c,   /* Dark Reddish Brown */
                                    #2c5f56    /* Dark Teal Green */);
       color: #ffffff;
@@ -121,6 +121,70 @@
       box-shadow: 0 8px 24px rgba(0, 0, 0, 0.4);
       transition: all 0.3s ease;
     }
+    .header-card {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  margin: auto;
+  max-width: 600px;
+  text-align: center;
+  transition: all 0.3s ease;
+    }
+    .header-card-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 2rem;
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-radius: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  flex-wrap: wrap;
+  text-align: left;
+}
+
+.header-logo img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
+}
+
+.header-info h1 {
+  font-size: 1.8rem;
+  margin: 0;
+}
+
+.header-info h2 {
+  font-size: 1rem;
+  color: #ccc;
+  margin: 0.2rem 0 0.8rem 0;
+}
+
+.contact-details {
+  font-size: 0.9rem;
+  color: #aaa;
+  line-height: 1.6;
+}
+
+.contact-details a {
+  color: #74b9ff;
+  text-decoration: none;
+}
+
+.contact-details i {
+  color: #74b9ff;
+  margin-right: 6px;
+}
 
 </style>
 
@@ -138,33 +202,24 @@
 </head>
 <body>
   <header>
-    <img src="logo_circular.png" alt="7xer.fx logo" />
-    <h1>Umer Khokhar (@7xer.fx)</h1>
-    <h2>Aspiring Video Editor | Sync | VFX | Anime</h2>
-    <div style="text-align: center; line-height: 2; font-size: 1rem;">
-  <div>
-    <i class="fas fa-phone" style="color: #00b894; margin-right: 8px;"></i>
-    <a href="tel:+923369450420" style="color: #74b9ff; text-decoration: none;">+92 336 9450420</a>
-  </div>
-  <div>
-    <i class="fas fa-envelope" style="color: #fdcb6e; margin-right: 8px;"></i>
-    <a href="mailto:umerkhokhar389@gmail.com" style="color: #74b9ff; text-decoration: none;">umerkhokhar389@gmail.com</a>
-  </div>
-  <div>
-    <i class="fab fa-instagram" style="color: #e84393; margin-right: 8px;"></i>
-    <a href="https://instagram.com/7xer.fx" target="_blank" style="color: #74b9ff; text-decoration: none;">Instagram</a>
-  </div>
-  <div>
-    <i class="fas fa-file-download" style="color: #0984e3; margin-right: 8px;"></i>
-    <a href="Umer_Khokhar_CV.pdf" download style="color: #74b9ff; text-decoration: none;">Download Resume (PDF)</a>
-  </div>
-  <div>
-  <i class="fas fa-book" style="color: #3498db; margin-right: 8px;"></i>
-  <a href="https://github.com/u7lvk/Portfolio?tab=readme-ov-file#-7xerfx--video-editing-portfolio" target="_blank" style="color: #74b9ff; text-decoration: none;">
-    README.md
-  </a>
-  </div>
+  <div class="header-card-row">
+    <div class="header-logo">
+      <img src="logo_circular.png" alt="7xer.fx logo" />
     </div>
+    <div class="header-info">
+      <h1>Umer Khokhar</h1>
+      <h2>Aspiring Video Editor</h2>
+      <div class="contact-details">
+        <span><i class="fas fa-phone"></i> +92 336 9450420</span> |
+        <span><i class="fas fa-envelope"></i> umerkhokhar389@gmail.com</span> |
+        <span><i class="fas fa-map-marker-alt"></i> Rawalpindi, Pakistan</span>
+        <br />
+        <span><i class="fab fa-instagram"></i> <a href="https://instagram.com/7xer.fx" target="_blank">@7xer.fx</a></span> |
+        <span><i class="fas fa-file-download"></i> <a href="Umer_Khokhar_CV.pdf" download>Resume (PDF)</a></span> |
+        <span><i class="fas fa-book"></i> <a href="https://github.com/u7lvk/Portfolio?tab=readme-ov-file#-7xerfx--video-editing-portfolio" target="_blank">README.md</a></span>
+      </div>
+    </div>
+  </div>
   </header>
 
   <main class="grid">
