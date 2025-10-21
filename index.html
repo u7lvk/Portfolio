@@ -1,455 +1,365 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Umer Khokhar | 7xer.fx – Video Editing Portfolio featuring anime, VFX, sync edits, and more." />
-  <meta name="author" content="Umer Khokhar">
-  <meta name="keywords" content="Umer Khokhar, 7xer.fx, video editing, anime edits, VFX, portfolio, sync edits" />
-  <title>7xer.fx – Video Editing Portfolio</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Umer Khokhar – 7xer.fx | Video-Editing Portfolio</title>
+  <meta name="description" content="Anime edits, VFX breakdowns, sync reels and more by Umer Khokhar (7xer.fx).">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-    body {
-  margin: 0;
-  font-family: 'Segoe UI', sans-serif;
-  background: linear-gradient(
-    135deg,
-    #0a2342,   /* Deep Navy */
-    #59437a,   /* Muted Purple */
-    #2e1f27,   /* Warm Charcoal */
-    #1f3e3e,   /* Dusty Teal */
-    #3c3c47    /* Steel Gray */
-  );
-  color: #ffffff;
-  background-size: 300% 300%;
-  animation: gradientBG 12s ease infinite;
-    }
-    header {
-      text-align: center;
-      padding: 2rem 1rem;
-    }
-    header img {
-      width: 100px;
-      height: 100px;
-      border-radius: 50%;
-      box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-    }
-    h1 { font-size: 2rem; margin: 0.5rem 0; }
-    h2 { font-size: 1.2rem; font-weight: normal; color: #cccccc; }
-    .contact a {
-      display: block;
-      color: #64b5f6;
-      text-decoration: none;
-      margin: 0.2rem;
-    }
-    .grid {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-      gap: 1.5rem;
-      padding: 2rem;
-    }
-    .card {
-  position: relative;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 16px;
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  padding: 1rem;
-  text-align: center;
-  transition: all 0.3s ease;
-  overflow: hidden; /* ✅ contains shimmer */
-    }
-.card::after {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: -75%;
-      width: 50%;
-      height: 100%;
-      background: linear-gradient(
-        120deg,
-        rgba(255, 255, 255, 0.1) 0%,
-        rgba(255, 255, 255, 0.5) 50%,
-        rgba(255, 255, 255, 0.1) 100%
-      );
-      transform: skewX(-20deg);
-      animation: shimmer 3s infinite;
-      z-index: 1;
-    }
-
-    @keyframes shimmer {
-      0% {
-        left: -75%;
-      }
-      100% {
-        left: 125%;
-      }
-    }
-
-    .card > * {
-      position: relative;
-      z-index: 2;
-    }
-
-      .card img {
-      width: 100%;
-      height: auto;
-      border-radius: 10px;
-      margin-bottom: 0.5rem;
-    }
-    .card a {
-      display: inline-block;
-      margin-top: 0.5rem;
-      color: #64b5f6;
-      text-decoration: none;
-      font-weight: bold;
-    }
-  
-    @keyframes gradientBG {
-      0% { background-position: 0% 50%; }
-      50% { background-position: 100% 50%; }
-      100% { background-position: 0% 50%; }
-    }
-    
-        .header-card-row {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 2rem;
-  background: rgba(255, 255, 255, 0.08);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
-  border-radius: 20px;
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-  padding: 2rem;
-  max-width: 900px;
-  margin: 2rem auto;
-  flex-wrap: wrap;
-  text-align: left;
-}
-
-.header-logo img {
-  width: 120px;
-  height: 120px;
-  border-radius: 50%;
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-}
-
-.header-info {
-  flex: 1;
-  min-width: 200px;
-}
-  .header-info h1 {
-  font-size: 1.8rem;
+  /* ---------- CSS VARIABLES (easy theming) ---------- */
+  :root{
+    --bg:#0a0a0a;
+    --surface:#1a1a1a;
+    --glass:rgba(255,255,255,.06);
+    --text:#f1f1f1;
+    --accent:#64b5f6;
+    --accent2:#e84393;
+    --radius:14px;
+    --transition:.35s ease;
   }
-  <style>
-  body {
-    margin: 0;
-    font-family: 'Segoe UI', sans-serif;
-    background: linear-gradient(
-      135deg,
-      #0a2342,
-      #59437a,
-      #2e1f27,
-      #1f3e3e,
-      #3c3c47
-    );
-    color: #ffffff;
-    background-size: 300% 300%;
-    animation: gradientBG 12s ease infinite;
+  [data-theme="light"]{
+    --bg:#ffffff;
+    --surface:#f5f5f5;
+    --glass:rgba(0,0,0,.04);
+    --text:#121212;
+    --accent:#1769aa;
+    --accent2:#d81b60;
   }
 
-  header {
-    padding: 2rem 1rem;
+  /* ---------- RESET ---------- */
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+  body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth}
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+
+  /* ---------- NAV ---------- */
+  header{
+    position:sticky;top:0;z-index:20;
+    background:var(--glass);
+    backdrop-filter:blur(12px);
+    -webkit-backdrop-filter:blur(12px);
+    border-bottom:1px solid rgba(255,255,255,.08);
+  }
+  .nav{
+    max-width:1100px;margin:auto;
+    display:flex;align-items:center;justify-content:space-between;
+    padding:.75rem 1.25rem;
+  }
+  .nav__logo{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:.5rem}
+  .nav__logo img{width:34px;height:34px;border-radius:50%}
+  .nav__links{display:flex;align-items:center;gap:1.25rem}
+  .nav__links a{padding:.25rem .5rem;font-size:.9rem;position:relative}
+  .nav__links a::after{
+    content:'';position:absolute;left:0;bottom:-4px;height:2px;width:0;
+    background:var(--accent);transition:width var(--transition)
+  }
+  .nav__links a:hover::after{width:100%}
+  .nav__actions{display:flex;align-items:center;gap:.75rem}
+  .btn{
+    padding:.55rem 1.1rem;border-radius:var(--radius);
+    background:var(--accent);color:#fff;font-weight:600;font-size:.85rem;
+    transition:background var(--transition),transform var(--transition);
+  }
+  .btn:hover{background:var(--accent2);transform:translateY(-2px)}
+  .theme-toggle{background:none;border:none;font-size:1.2rem;cursor:pointer}
+
+  /* ---------- HERO ---------- */
+  .hero{
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;padding:6rem 1rem 4rem;
+    background:radial-gradient(circle at 50% 0%, rgba(100,181,246,.14) 0%, transparent 40%);
+  }
+  .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:.5rem}
+  .hero p{font-size:1.1rem;opacity:.8;margin-bottom:1.75rem}
+  .hero__video{
+    width:100%;max-width:700px;height:auto;border-radius:var(--radius);
+    box-shadow:0 20px 40px rgba(0,0,0,.35);
+  }
+  .hero__btns{display:flex;gap:1rem;margin-top:1.5rem}
+
+  /* ---------- FILTER ---------- */
+  .filter{
+    display:flex;justify-content:center;gap:.75rem;padding:2rem 1rem 1rem;flex-wrap:wrap;
+  }
+  .filter button{
+    background:var(--surface);border:1px solid rgba(255,255,255,.1);
+    color:var(--text);padding:.5rem 1.1rem;border-radius:var(--radius);cursor:pointer;
+    transition:background var(--transition),color var(--transition);
+  }
+  .filter button.active{background:var(--accent);color:#fff}
+
+  /* ---------- GRID ---------- */
+  .grid{
+    display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
+    gap:1.5rem;padding:1rem 1rem 3rem;max-width:1100px;margin:auto;
+  }
+  .card{
+    background:var(--surface);
+    border-radius:var(--radius);
+    overflow:hidden;
+    cursor:pointer;
+    transition:transform var(--transition),box-shadow var(--transition);
+    position:relative;
+  }
+  .card img{width:100%;height:260px;object-fit:cover}
+  .card__info{padding:.75rem 1rem}
+  .card__title{font-weight:600;margin-bottom:.25rem}
+  .card__cat{font-size:.8rem;opacity:.7}
+  .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
+
+  /* ---------- MODAL ---------- */
+  .modal{
+    position:fixed;inset:0;background:rgba(0,0,0,.75);
+    display:flex;align-items:center;justify-content:center;
+    padding:1rem;z-index:30;opacity:0;pointer-events:none;transition:opacity var(--transition)
+  }
+  .modal.active{opacity:1;pointer-events:auto}
+  .modal__content{
+    background:var(--surface);
+    border-radius:var(--radius);
+    max-width:900px;width:100%;
+    position:relative;
+    overflow:hidden;
+  }
+  .modal__close{
+    position:absolute;top:.75rem;right:.75rem;
+    background:rgba(0,0,0,.5);color:#fff;border:none;
+    width:32px;height:32px;border-radius:50%;font-size:1.3rem;cursor:pointer;
+  }
+  .modal video{width:100%;height:auto;display:block}
+
+  /* ---------- FOOTER ---------- */
+  footer{
+    text-align:center;padding:2.5rem 1rem 2rem;font-size:.85rem;
+    opacity:.55;border-top:1px solid rgba(255,255,255,.08);
   }
 
-  .header-card {
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    padding: 2rem;
-    max-width: 900px;
-    margin: 2rem auto;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 1rem;
+  /* ---------- RESPONSIVE ---------- */
+  @media(max-width:600px){
+    .nav__links{display:none} /* you can turn into burger later */
+    .hero{padding:4rem 1rem 3rem}
   }
-
-  .header-row {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    gap: 1rem;
-    flex-wrap: wrap;
-    text-align: center;
-  }
-
-  .header-logo img {
-    width: 110px;
-    height: 110px;
-    border-radius: 50%;
-    box-shadow: 0 0 15px rgba(255, 255, 255, 0.2);
-  }
-
-  .header-info h1 {
-    font-size: 1.8rem;
-    margin: 0;
-  }
-
-  .header-info h2 {
-    font-size: 1rem;
-    color: #ccc;
-    margin: 0.2rem 0 0;
-  }
-
-  .contact-details {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    gap: 0.4rem;
-    font-size: 0.95rem;
-    color: #aaa;
-    text-align: center;
-  }
-
-  .contact-details i {
-    color: #74b9ff;
-    margin-right: 8px;
-  }
-
-  .contact-details a {
-    color: #74b9ff;
-    text-decoration: none;
-  }
-
-  .contact-details a:hover {
-    text-decoration: underline;
-  }
-
-  .grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-    gap: 1.5rem;
-    padding: 2rem;
-  }
-
-  .card {
-    position: relative;
-    background: rgba(255, 255, 255, 0.08);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
-    border-radius: 16px;
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.25);
-    border: 1px solid rgba(255, 255, 255, 0.2);
-    padding: 1rem;
-    text-align: center;
-    transition: all 0.3s ease;
-    overflow: hidden;
-  }
-
-  .card > * {
-    position: relative;
-    z-index: 2;
-  }
-
-  .card img {
-    width: 100%;
-    height: auto;
-    border-radius: 10px;
-    margin-bottom: 0.5rem;
-  }
-
-  .card a {
-    display: inline-block;
-    margin-top: 0.5rem;
-    color: #64b5f6;
-    text-decoration: none;
-    font-weight: bold;
-  }
-
-
-  .card::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: -75%;
-    width: 50%;
-    height: 100%;
-    background: linear-gradient(
-      120deg,
-      rgba(255, 255, 255, 0.1) 0%,
-      rgba(255, 255, 255, 0.5) 50%,
-      rgba(255, 255, 255, 0.1) 100%
-    );
-    transform: skewX(-20deg);
-    animation: shimmer 3s infinite;
-    z-index: 1;
-  }
-
-  @keyframes shimmer {
-    0% {
-      left: -75%;
-    }
-    100% {
-      left: 125%;
-    }
-  }
-
-  @keyframes gradientBG {
-    0% {
-      background-position: 0% 50%;
-    }
-    50% {
-      background-position: 100% 50%;
-    }
-    100% {
-      background-position: 0% 50%;
-    }
-  }
-
-  /* ✅ RESPONSIVE adjustments */
-  @media (max-width: 600px) {
-    .header-row {
-      flex-direction: column;
-      text-align: center;
-    }
-
-    .header-info h1 {
-      font-size: 1.4rem;
-    }
-
-    .header-logo img {
-      width: 90px;
-      height: 90px;
-    }
-  }
-    .card:hover {
-  transform: translateY(-6px) scale(1.03);
-  background: rgba(255, 255, 255, 0.12);
-  box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
-  transition: all 0.3s ease;
-    }
-</style>
-
-  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
-  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-  <script>
-    document.addEventListener('DOMContentLoaded', () => {
-      AOS.init({
-        duration: 1000,
-        once: false
-      });
-    });
-  </script>
-
+  </style>
 </head>
 <body>
-  <header>
-  <div class="header-card" 
-     data-aos="fade-down">
-    <div class="header-row">
-      <div class="header-logo">
-        <img src="logo_circular.png" alt="7xer.fx logo" />
-      </div>
-      <div class="header-info">
-        <h1>Umer Khokhar</h1>
-        <h2>Aspiring Video Editor | Visit my <i class="fab fa-instagram" style="color: #e84393;"></i> for more!</h2>
-      </div>
+
+<!-- ---------- NAV ---------- -->
+<header>
+  <div class="nav">
+    <a class="nav__logo" href="#">
+      <img src="logo_circular.png" alt="logo"> 7xer.fx
+    </a>
+    <nav class="nav__links">
+      <a href="#reels">Reels</a>
+      <a href="#about">About</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <div class="nav__actions">
+      <a class="btn" href="Umer_Khokhar_CV.pdf" download>Resume</a>
+      <a class="btn" href="https://instagram.com/7xer.fx" target="_blank">Instagram</a>
+      <button class="theme-toggle" aria-label="toggle theme">🌗</button>
     </div>
-    <div class="contact-details">
-  <div>
-    <i class="fas fa-phone" style="color: #00b894;"></i>
-    <a href="tel:+923369450420">+92 336 9450420</a>
   </div>
-  <div>
-    <i class="fas fa-envelope" style="color: #fdcb6e;"></i>
-    <a href="mailto:umerkhokhar389@gmail.com">umerkhokhar389@gmail.com</a>
+</header>
+
+<!-- ---------- HERO ---------- -->
+<section class="hero">
+  <h1>Umer Khokhar</h1>
+  <p>Aspiring video editor — anime, VFX & sync edits.</p>
+  <video class="hero__video" autoplay muted loop playsinline poster="hero_poster.jpg">
+    <source src="hero_reel.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+  <div class="hero__btns">
+    <a class="btn" href="#reels">View Reels</a>
+    <a class="btn" href="mailto:umerkhokhar389@gmail.com">Hire Me</a>
   </div>
-  <div>
-    <i class="fab fa-instagram" style="color: #e84393;"></i>
-    <a href="https://instagram.com/7xer.fx" target="_blank">@7xer.fx</a>
+</section>
+
+<!-- ---------- FILTER ---------- -->
+<div class="filter">
+  <button class="active" data-filter="all">All</button>
+  <button data-filter="anime">Anime</button>
+  <button data-filter="vfx">VFX</button>
+  <button data-filter="sync">Sync</button>
+</div>
+
+<!-- ---------- GRID ---------- -->
+<main class="grid" id="reels">
+  <!-- 1 -->
+  <div class="card" data-cat="anime">
+    <img src="rounded_1.png" alt="Reel 1">
+    <div class="card__info">
+      <div class="card__title">Reel One</div>
+      <div class="card__cat">Anime</div>
+    </div>
   </div>
-  <div>
-    <i class="fas fa-file-download" style="color: #0984e3;"></i>
-    <a href="Umer_Khokhar_CV.pdf" download>Resume (PDF)</a>
+  <!-- 2 -->
+  <div class="card" data-cat="sync">
+    <img src="rounded_2.png" alt="Reel 2">
+    <div class="card__info">
+      <div class="card__title">Reel Two</div>
+      <div class="card__cat">Sync</div>
+    </div>
   </div>
-  <div>
-    <i class="fas fa-book" style="color: #3498db;"></i>
-    <a href="https://github.com/u7lvk/Portfolio?tab=readme-ov-file#-7xerfx--video-editing-portfolio" target="_blank">README.md</a>
+  <!-- 3 -->
+  <div class="card" data-cat="vfx">
+    <img src="rounded_3.png" alt="Reel 3">
+    <div class="card__info">
+      <div class="card__title">Reel Three</div>
+      <div class="card__cat">VFX</div>
+    </div>
+  </div>
+  <!-- 4 -->
+  <div class="card" data-cat="anime">
+    <img src="rounded_4.png" alt="Reel 4">
+    <div class="card__info">
+      <div class="card__title">Reel Four</div>
+      <div class="card__cat">Anime</div>
+    </div>
+  </div>
+  <!-- 5 -->
+  <div class="card" data-cat="sync">
+    <img src="rounded_5.png" alt="Reel 5">
+    <div class="card__info">
+      <div class="card__title">Reel Five</div>
+      <div class="card__cat">Sync</div>
+    </div>
+  </div>
+  <!-- 6 -->
+  <div class="card" data-cat="vfx">
+    <img src="rounded_6.png" alt="Reel 6">
+    <div class="card__info">
+      <div class="card__title">Reel Six</div>
+      <div class="card__cat">VFX</div>
+    </div>
+  </div>
+  <!-- 7 -->
+  <div class="card" data-cat="anime">
+    <img src="rounded_7.png" alt="Reel 7">
+    <div class="card__info">
+      <div class="card__title">Reel Seven</div>
+      <div class="card__cat">Anime</div>
+    </div>
+  </div>
+  <!-- 8 -->
+  <div class="card" data-cat="sync">
+    <img src="rounded_8.png" alt="Reel 8">
+    <div class="card__info">
+      <div class="card__title">Reel Eight</div>
+      <div class="card__cat">Sync</div>
+    </div>
+  </div>
+  <!-- 9 -->
+  <div class="card" data-cat="vfx">
+    <img src="rounded_9.png" alt="Reel 9">
+    <div class="card__info">
+      <div class="card__title">Reel Nine</div>
+      <div class="card__cat">VFX</div>
+    </div>
+  </div>
+  <!-- 10 -->
+  <div class="card" data-cat="anime">
+    <img src="rounded_10.png" alt="Reel 10">
+    <div class="card__info">
+      <div class="card__title">Reel Ten</div>
+      <div class="card__cat">Anime</div>
+    </div>
+  </div>
+  <!-- 11 -->
+  <div class="card" data-cat="sync">
+    <img src="rounded_11.png" alt="Reel 11">
+    <div class="card__info">
+      <div class="card__title">Reel Eleven</div>
+      <div class="card__cat">Sync</div>
+    </div>
+  </div>
+  <!-- 12 -->
+  <div class="card" data-cat="vfx">
+    <img src="rounded_12.png" alt="Reel 12">
+    <div class="card__info">
+      <div class="card__title">Reel Twelve</div>
+      <div class="card__cat">VFX</div>
+    </div>
+  </div>
+</main>
+
+<!-- ---------- MODAL ---------- -->
+<div class="modal" id="modal">
+  <div class="modal__content">
+    <button class="modal__close">&times;</button>
+    <video id="modalVideo" controls playsinline></video>
   </div>
 </div>
-  </div>
-  </header>
-  <main class="grid">
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_1.png" alt="Reel 1">
-    <a href="https://www.instagram.com/reel/DBOud__gye8/" target="_blank">Watch Reel 1</a>
-  </div>
 
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_2.png" alt="Reel 2">
-    <a href="https://www.instagram.com/reel/C-NZY46N608/" target="_blank">Watch Reel 2</a>
-  </div>
+<!-- ---------- FOOTER ---------- -->
+<footer>
+  © <span id="year"></span> Umer Khokhar. Built with ☕ &amp; pixels.
+</footer>
 
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_3.png" alt="Reel 3">
-    <a href="https://www.instagram.com/reel/DC3hbx6gQiP/?igsh=MWlwbm04bjA0YWtlYw==" target="_blank">Watch Reel 3</a>
-  </div>
+<script>
+/* ---------- THEME TOGGLE ---------- */
+const toggle = document.querySelector('.theme-toggle');
+const html = document.documentElement;
+const stored = localStorage.getItem('theme');
+if(stored) html.setAttribute('data-theme', stored);
+toggle.addEventListener('click',()=>{
+  const current = html.getAttribute('data-theme');
+  const next = current==='light' ? 'dark' : 'light';
+  html.setAttribute('data-theme', next);
+  localStorage.setItem('theme', next);
+});
 
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_4.png" alt="Reel 4">
-    <a href="https://www.instagram.com/reel/C9zja0PAAF2/" target="_blank">Watch Reel 4</a>
-  </div>
+/* ---------- FILTER ---------- */
+const filterBtns = document.querySelectorAll('.filter button');
+const cards = document.querySelectorAll('.card');
+filterBtns.forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    filterBtns.forEach(b=>b.classList.remove('active'));
+    btn.classList.add('active');
+    const val = btn.dataset.filter;
+    cards.forEach(c=>{
+      c.style.display = (val==='all' || c.dataset.cat===val) ? 'block' : 'none';
+    });
+  });
+});
 
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_5.png" alt="Reel 5">
-    <a href="https://www.instagram.com/reel/C9rbB1VA3Wg/" target="_blank">Watch Reel 5</a>
-  </div>
+/* ---------- MODAL ---------- */
+const modal = document.getElementById('modal');
+const modalVideo = document.getElementById('modalVideo');
+const links = [
+  "https://www.instagram.com/reel/DBOud__gye8/",
+  "https://www.instagram.com/reel/C-NZY46N608/",
+  "https://www.instagram.com/reel/DC3hbx6gQiP/",
+  "https://www.instagram.com/reel/C9zja0PAAF2/",
+  "https://www.instagram.com/reel/C9rbB1VA3Wg/",
+  "https://www.instagram.com/reel/DDmCCrnIFRx/",
+  "https://www.instagram.com/reel/C94bYiVgukz/",
+  "https://www.instagram.com/reel/DClnfk-gjtN/",
+  "https://www.instagram.com/reel/DBgJMPQAW78/",
+  "https://www.instagram.com/reel/DBOuyGPAn69/",
+  "https://www.instagram.com/reel/DJCVWPrKSPI/",
+  "https://www.instagram.com/p/DL4oe2DNa6M/"
+];
+cards.forEach((card,i)=>{
+  card.addEventListener('click',()=>{
+    modalVideo.src = links[i];
+    modal.classList.add('active');
+    modalVideo.play();
+  });
+});
+document.querySelector('.modal__close').addEventListener('click',closeModal);
+modal.addEventListener('click',e=>{if(e.target===modal) closeModal();});
+function closeModal(){
+  modal.classList.remove('active');
+  modalVideo.pause();
+  modalVideo.src='';
+}
 
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_6.png" alt="Reel 6">
-    <a href="https://www.instagram.com/reel/DDmCCrnIFRx/" target="_blank">Watch Reel 6</a>
-  </div>
-
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_7.png" alt="Reel 7">
-    <a href="https://www.instagram.com/reel/C94bYiVgukz/?igsh=MTVsZzgwcHl3d2Q0aw==" target="_blank">Watch Reel 7</a>
-  </div>
-
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_8.png" alt="Reel 8">
-    <a href="https://www.instagram.com/reel/DClnfk-gjtN/" target="_blank">Watch Reel 8</a>
-  </div>
-
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_9.png" alt="Reel 9">
-    <a href="https://www.instagram.com/reel/DBgJMPQAW78/" target="_blank">Watch Reel 9</a>
-  </div>
-
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_10.png" alt="Reel 10">
-    <a href="https://www.instagram.com/reel/DBOuyGPAn69/" target="_blank">Watch Reel 10</a>
-  </div>
-
-  <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_11.png" alt="Reel 11">
-    <a href="https://www.instagram.com/reel/DJCVWPrKSPI/" target="_blank">Watch Reel 11</a>
-  </div>
-
-    <div class="card" data-aos="zoom-in-up" data-aos-duration="400" data-aos-easing="ease-in-out">
-    <img src="rounded_12.png" alt="Reel 12">
-    <a href="https://www.instagram.com/p/DL4oe2DNa6M/" target="_blank">Watch Reel 12</a>
-    </div>
-  </main>
-  <footer style="text-align: center; padding: 1rem; font-size: 0.85rem; color: #aaa;">
-  © 2025 Umer Khokhar. All rights reserved.
-  </footer>
+/* ---------- DYNAMIC YEAR ---------- */
+document.getElementById('year').textContent = new Date().getFullYear();
+</script>
 </body>
 </html>
