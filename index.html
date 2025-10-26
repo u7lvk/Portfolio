@@ -8,7 +8,6 @@
   <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🎬</text></svg>">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
   <style>
-  /* ---------- CSS VARIABLES (easy theming) ---------- */
   :root{
     --bg:#0a0a0a;
     --surface:#1a1a1a;
@@ -16,7 +15,7 @@
     --text:#f1f1f1;
     --accent:#64b5f6;
     --accent2:#e84393;
-    --radius:14px;
+    --radius:10px;
     --transition:.35s ease;
   }
   [data-theme="light"]{
@@ -27,8 +26,6 @@
     --accent:#1769aa;
     --accent2:#d81b60;
   }
-
-  /* ---------- RESET ---------- */
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
   body{font-family:'Inter',sans-serif;background:var(--bg);color:var(--text);line-height:1.6;scroll-behavior:smooth}
   img{max-width:100%;display:block}
@@ -79,56 +76,36 @@
   }
   .hero__btns{display:flex;gap:1rem;margin-top:1.5rem}
 
-  /* ---------- FILTER ---------- */
-  .filter{
-    display:flex;justify-content:center;gap:.75rem;padding:2rem 1rem 1rem;flex-wrap:wrap;
-  }
-  .filter button{
-    background:var(--surface);border:1px solid rgba(255,255,255,.1);
-    color:var(--text);padding:.5rem 1.1rem;border-radius:var(--radius);cursor:pointer;
-    transition:background var(--transition),color var(--transition);
-  }
-  .filter button.active{background:var(--accent);color:#fff}
-
   /* ---------- GRID ---------- */
   .grid{
     display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:1.5rem;padding:1rem 1rem 3rem;max-width:1100px;margin:auto;
+    gap:1.5rem;padding:3rem 1rem;max-width:1100px;margin:auto;
   }
   .card{
     background:var(--surface);
     border-radius:var(--radius);
     overflow:hidden;
-    cursor:pointer;
     transition:transform var(--transition),box-shadow var(--transition);
     position:relative;
   }
   .card img{width:100%;height:260px;object-fit:cover}
-  .card__info{padding:.75rem 1rem}
+  .card__info{padding:.75rem 1rem;text-align:center}
   .card__title{font-weight:600;margin-bottom:.25rem}
-  .card__cat{font-size:.8rem;opacity:.7}
   .card:hover{transform:translateY(-6px);box-shadow:0 12px 30px rgba(0,0,0,.35)}
 
-  /* ---------- MODAL ---------- */
-  .modal{
-    position:fixed;inset:0;background:rgba(0,0,0,.75);
-    display:flex;align-items:center;justify-content:center;
-    padding:1rem;z-index:30;opacity:0;pointer-events:none;transition:opacity var(--transition)
+  /* ---------- ABOUT ---------- */
+  #about{
+    max-width:800px;margin:auto;padding:4rem 1rem;text-align:center;
   }
-  .modal.active{opacity:1;pointer-events:auto}
-  .modal__content{
-    background:var(--surface);
-    border-radius:var(--radius);
-    max-width:900px;width:100%;
-    position:relative;
-    overflow:hidden;
+  #about h2{margin-bottom:1rem}
+
+  /* ---------- CONTACT ---------- */
+  #contact{
+    max-width:600px;margin:auto;padding:4rem 1rem;text-align:center;
   }
-  .modal__close{
-    position:absolute;top:.75rem;right:.75rem;
-    background:rgba(0,0,0,.5);color:#fff;border:none;
-    width:32px;height:32px;border-radius:50%;font-size:1.3rem;cursor:pointer;
-  }
-  .modal video{width:100%;height:auto;display:block}
+  #contact h2{margin-bottom:1rem}
+  .contact-list{display:flex;flex-direction:column;gap:.75rem;margin-top:1rem;font-size:1rem}
+  .contact-list a{color:var(--accent);font-weight:600}
 
   /* ---------- FOOTER ---------- */
   footer{
@@ -138,7 +115,7 @@
 
   /* ---------- RESPONSIVE ---------- */
   @media(max-width:600px){
-    .nav__links{display:none} /* you can turn into burger later */
+    .nav__links{display:none}
     .hero{padding:4rem 1rem 3rem}
   }
   </style>
@@ -168,8 +145,9 @@
 <section class="hero">
   <h1>Umer Khokhar</h1>
   <p>Aspiring video editor — anime, VFX & sync edits.</p>
-  <video class="hero__video" autoplay muted loop playsinline poster="hero_poster.jpg">
-    <source src="hero_reel.mp4" type="video/mp4">
+  <!-- REEL-TWELVE IS NOW THE HERO REEL -->
+  <video class="hero__video" autoplay muted loop playsinline poster="rounded_12.png">
+    <source src="https://www.instagram.com/p/DL4oe2DNa6M/" type="video/mp4">
     Your browser does not support the video tag.
   </video>
   <div class="hero__btns">
@@ -178,121 +156,112 @@
   </div>
 </section>
 
-<!-- ---------- FILTER ---------- -->
-<div class="filter">
-  <button class="active" data-filter="all">All</button>
-  <button data-filter="anime">Anime</button>
-  <button data-filter="vfx">VFX</button>
-  <button data-filter="sync">Sync</button>
-</div>
-
-<!-- ---------- GRID ---------- -->
+<!-- ---------- REELS GRID ---------- -->
 <main class="grid" id="reels">
   <!-- 1 -->
-  <div class="card" data-cat="anime">
+  <a class="card" href="https://www.instagram.com/reel/DBOud__gye8/" target="_blank">
     <img src="rounded_1.png" alt="Reel 1">
     <div class="card__info">
       <div class="card__title">Reel One</div>
-      <div class="card__cat">Anime</div>
     </div>
-  </div>
+  </a>
   <!-- 2 -->
-  <div class="card" data-cat="sync">
+  <a class="card" href="https://www.instagram.com/reel/C-NZY46N608/" target="_blank">
     <img src="rounded_2.png" alt="Reel 2">
     <div class="card__info">
       <div class="card__title">Reel Two</div>
-      <div class="card__cat">Sync</div>
     </div>
-  </div>
+  </a>
   <!-- 3 -->
-  <div class="card" data-cat="vfx">
+  <a class="card" href="https://www.instagram.com/reel/DC3hbx6gQiP/" target="_blank">
     <img src="rounded_3.png" alt="Reel 3">
     <div class="card__info">
       <div class="card__title">Reel Three</div>
-      <div class="card__cat">VFX</div>
     </div>
-  </div>
+  </a>
   <!-- 4 -->
-  <div class="card" data-cat="anime">
+  <a class="card" href="https://www.instagram.com/reel/C9zja0PAAF2/" target="_blank">
     <img src="rounded_4.png" alt="Reel 4">
     <div class="card__info">
       <div class="card__title">Reel Four</div>
-      <div class="card__cat">Anime</div>
     </div>
-  </div>
+  </a>
   <!-- 5 -->
-  <div class="card" data-cat="sync">
+  <a class="card" href="https://www.instagram.com/reel/C9rbB1VA3Wg/" target="_blank">
     <img src="rounded_5.png" alt="Reel 5">
     <div class="card__info">
       <div class="card__title">Reel Five</div>
-      <div class="card__cat">Sync</div>
     </div>
-  </div>
+  </a>
   <!-- 6 -->
-  <div class="card" data-cat="vfx">
+  <a class="card" href="https://www.instagram.com/reel/DDmCCrnIFRx/" target="_blank">
     <img src="rounded_6.png" alt="Reel 6">
     <div class="card__info">
       <div class="card__title">Reel Six</div>
-      <div class="card__cat">VFX</div>
     </div>
-  </div>
+  </a>
   <!-- 7 -->
-  <div class="card" data-cat="anime">
+  <a class="card" href="https://www.instagram.com/reel/C94bYiVgukz/" target="_blank">
     <img src="rounded_7.png" alt="Reel 7">
     <div class="card__info">
       <div class="card__title">Reel Seven</div>
-      <div class="card__cat">Anime</div>
     </div>
-  </div>
+  </a>
   <!-- 8 -->
-  <div class="card" data-cat="sync">
+  <a class="card" href="https://www.instagram.com/reel/DClnfk-gjtN/" target="_blank">
     <img src="rounded_8.png" alt="Reel 8">
     <div class="card__info">
       <div class="card__title">Reel Eight</div>
-      <div class="card__cat">Sync</div>
     </div>
-  </div>
+  </a>
   <!-- 9 -->
-  <div class="card" data-cat="vfx">
+  <a class="card" href="https://www.instagram.com/reel/DBgJMPQAW78/" target="_blank">
     <img src="rounded_9.png" alt="Reel 9">
     <div class="card__info">
       <div class="card__title">Reel Nine</div>
-      <div class="card__cat">VFX</div>
     </div>
-  </div>
+  </a>
   <!-- 10 -->
-  <div class="card" data-cat="anime">
+  <a class="card" href="https://www.instagram.com/reel/DBOuyGPAn69/" target="_blank">
     <img src="rounded_10.png" alt="Reel 10">
     <div class="card__info">
       <div class="card__title">Reel Ten</div>
-      <div class="card__cat">Anime</div>
     </div>
-  </div>
+  </a>
   <!-- 11 -->
-  <div class="card" data-cat="sync">
+  <a class="card" href="https://www.instagram.com/reel/DJCVWPrKSPI/" target="_blank">
     <img src="rounded_11.png" alt="Reel 11">
     <div class="card__info">
       <div class="card__title">Reel Eleven</div>
-      <div class="card__cat">Sync</div>
     </div>
-  </div>
-  <!-- 12 -->
-  <div class="card" data-cat="vfx">
+  </a>
+  <!-- 12 (already used in hero, but still listed) -->
+  <a class="card" href="https://www.instagram.com/p/DL4oe2DNa6M/" target="_blank">
     <img src="rounded_12.png" alt="Reel 12">
     <div class="card__info">
       <div class="card__title">Reel Twelve</div>
-      <div class="card__cat">VFX</div>
     </div>
-  </div>
+  </a>
 </main>
 
-<!-- ---------- MODAL ---------- -->
-<div class="modal" id="modal">
-  <div class="modal__content">
-    <button class="modal__close">&times;</button>
-    <video id="modalVideo" controls playsinline></video>
+<!-- ---------- ABOUT ---------- -->
+<section id="about">
+  <h2>About Me</h2>
+  <p>
+    I’m Umer Khokhar, a self-taught video editor with 3.5+ years of experience creating high-energy anime & cinematic edits, VFX breakdowns, and beat-synced short-form content. I specialize in Adobe After Effects and love experimenting with new styles to keep viewers hooked.
+  </p>
+</section>
+
+<!-- ---------- CONTACT ---------- -->
+<section id="contact">
+  <h2>Contact</h2>
+  <p>Want to work together? Reach out via any of the channels below:</p>
+  <div class="contact-list">
+    <div>📧 <a href="mailto:umerkhokhar389@gmail.com">umerkhokhar389@gmail.com</a></div>
+    <div>📱 <a href="tel:+923369450420">+92 336 9450420</a></div>
+    <div>📸 <a href="https://instagram.com/7xer.fx" target="_blank">instagram.com/7xer.fx</a></div>
   </div>
-</div>
+</section>
 
 <!-- ---------- FOOTER ---------- -->
 <footer>
@@ -311,52 +280,6 @@ toggle.addEventListener('click',()=>{
   html.setAttribute('data-theme', next);
   localStorage.setItem('theme', next);
 });
-
-/* ---------- FILTER ---------- */
-const filterBtns = document.querySelectorAll('.filter button');
-const cards = document.querySelectorAll('.card');
-filterBtns.forEach(btn=>{
-  btn.addEventListener('click',()=>{
-    filterBtns.forEach(b=>b.classList.remove('active'));
-    btn.classList.add('active');
-    const val = btn.dataset.filter;
-    cards.forEach(c=>{
-      c.style.display = (val==='all' || c.dataset.cat===val) ? 'block' : 'none';
-    });
-  });
-});
-
-/* ---------- MODAL ---------- */
-const modal = document.getElementById('modal');
-const modalVideo = document.getElementById('modalVideo');
-const links = [
-  "https://www.instagram.com/reel/DBOud__gye8/",
-  "https://www.instagram.com/reel/C-NZY46N608/",
-  "https://www.instagram.com/reel/DC3hbx6gQiP/",
-  "https://www.instagram.com/reel/C9zja0PAAF2/",
-  "https://www.instagram.com/reel/C9rbB1VA3Wg/",
-  "https://www.instagram.com/reel/DDmCCrnIFRx/",
-  "https://www.instagram.com/reel/C94bYiVgukz/",
-  "https://www.instagram.com/reel/DClnfk-gjtN/",
-  "https://www.instagram.com/reel/DBgJMPQAW78/",
-  "https://www.instagram.com/reel/DBOuyGPAn69/",
-  "https://www.instagram.com/reel/DJCVWPrKSPI/",
-  "https://www.instagram.com/p/DL4oe2DNa6M/"
-];
-cards.forEach((card,i)=>{
-  card.addEventListener('click',()=>{
-    modalVideo.src = links[i];
-    modal.classList.add('active');
-    modalVideo.play();
-  });
-});
-document.querySelector('.modal__close').addEventListener('click',closeModal);
-modal.addEventListener('click',e=>{if(e.target===modal) closeModal();});
-function closeModal(){
-  modal.classList.remove('active');
-  modalVideo.pause();
-  modalVideo.src='';
-}
 
 /* ---------- DYNAMIC YEAR ---------- */
 document.getElementById('year').textContent = new Date().getFullYear();
