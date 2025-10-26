@@ -121,6 +121,23 @@
     .nav__links{display:none} /* burger menu left as exercise */
     .hero{padding:4rem 1rem 3rem}
   }
+    /* ---------- UNIVERSAL HOVER (cards + hero) ---------- */
+.card, .hero__poster {
+  transition: transform var(--transition), box-shadow var(--transition);
+  display: block;          /* remove inline-gap */
+  text-decoration: none;   /* kill underline */
+  color: inherit;          /* kill blue */
+}
+.card:hover, .hero__poster:hover {
+  transform: translateY(-6px) scale(1.03);
+  box-shadow: 0 12px 30px rgba(0, 0, 0, .35);
+}
+
+/* ---------- TEXT INSIDE CARDS ---------- */
+.card__title {
+  color: var(--text);      /* same as body */
+  text-decoration: none;   /* extra safety */
+}
   </style>
 </head>
 <body>
