@@ -63,18 +63,41 @@
   .theme-toggle{background:none;border:none;font-size:1.2rem;cursor:pointer}
 
   /* ---------- HERO ---------- */
-  .hero{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:6rem 1rem 4rem;
-    background:radial-gradient(circle at 50% 0%, rgba(100,181,246,.14) 0%, transparent 40%);
-  }
-  .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:.5rem}
-  .hero p{font-size:1.1rem;opacity:.8;margin-bottom:1.75rem}
-  .hero__video{
-    width:100%;max-width:700px;height:auto;border-radius:var(--radius);
-    box-shadow:0 20px 40px rgba(0,0,0,.35);
-  }
-  .hero__btns{display:flex;gap:1rem;margin-top:1.5rem}
+  <!-- ---------- HERO (CLICKABLE) ---------- -->
+<section class="hero">
+  <h1>Umer Khokhar</h1>
+  <p>Aspiring video editor — anime, VFX & sync edits.</p>
+
+  <!-- CLICKABLE HERO POSTER -->
+  <a href="https://www.instagram.com/p/DL4oe2DNa6M/" target="_blank" class="hero__poster">
+    <img src="rounded_12.png" alt="Hero Reel">
+    <span class="play-icon">▶</span>
+  </a>
+
+  <div class="hero__btns">
+    <a class="btn" href="#reels">View Reels</a>
+    <a class="btn" href="mailto:umerkhokhar389@gmail.com">Hire Me</a>
+  </div>
+</section>
+
+<style>
+.hero__poster{
+  position:relative;
+  display:inline-block;
+  border-radius:var(--radius);
+  overflow:hidden;
+  box-shadow:0 20px 40px rgba(0,0,0,.35);
+  transition:transform var(--transition),box-shadow var(--transition);
+}
+.hero__poster:hover{transform:scale(1.03);box-shadow:0 25px 50px rgba(0,0,0,.45)}
+.hero__poster img{width:100%;max-width:700px;display:block}
+.play-icon{
+  position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
+  font-size:4rem;color:#fff;background:rgba(0,0,0,.35);
+  opacity:0;transition:opacity var(--transition);
+}
+.hero__poster:hover .play-icon{opacity:1}
+</style>
 
   /* ---------- GRID ---------- */
   .grid{
