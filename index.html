@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-UTF-8">
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Umer Khokhar – 7xer.fx | Video-Editing Portfolio</title>
   <meta name="description" content="High-energy anime edits, VFX breakdowns & sync reels by Umer Khokhar (7xer.fx).">
@@ -33,15 +33,22 @@
   }
   @keyframes bgShift{0%,100%{opacity:1}50%{opacity:.7}}
 
-  /* ---------- NOTION-LIKE HEADER ---------- */
+  /* ---------- STICKY NOTION-LIKE HEADER ---------- */
   header{
-    max-width:1000px;margin:1.5rem auto 0;
-    background:var(--surface);
+    position:sticky;
+    top:1.5rem;                      /* keeps the “card” floating away from viewport edge */
+    z-index:100;
+    max-width:1000px;
+    margin:0 auto;                   /* centre the card */
+    background:rgba(255,255,255,.05);/* slight tint so blur shows */
     border:1px solid rgba(255,255,255,.08);
     border-radius:var(--radius);
     backdrop-filter:blur(25px);
+    -webkit-backdrop-filter:blur(25px);
     padding:.75rem 1.25rem;
-    display:flex;align-items:center;justify-content:space-between;
+    display:flex;
+    align-items:center;
+    justify-content:space-between;
     box-shadow:0 10px 30px rgba(0,0,0,.25);
   }
   .nav__logo{font-weight:700;font-size:1.1rem;display:flex;align-items:center;gap:.5rem;color:#fff}
@@ -51,64 +58,32 @@
   .nav__links a::after{content:'';position:absolute;left:0;bottom:-4px;height:2px;width:0;background:var(--accent);transition:width var(--transition)}
   .nav__links a:hover::after,.nav__links a.active::after{width:100%}
   .nav__actions{display:flex;align-items:center;gap:.75rem}
-  .btn{
-    padding:.55rem 1.1rem;border-radius:var(--radius);
-    background:var(--accent);color:#fff;font-weight:600;font-size:.85rem;
-    transition:background var(--transition),transform var(--transition);
-    text-decoration:none;border:none;cursor:pointer;
-  }
+  .btn{padding:.55rem 1.1rem;border-radius:var(--radius);background:var(--accent);color:#fff;font-weight:600;font-size:.85rem;transition:background var(--transition),transform var(--transition);text-decoration:none;border:none;cursor:pointer}
   .btn:hover{background:var(--accent2);transform:translateY(-2px)}
 
   /* ---------- HERO ---------- */
-  .hero{
-    display:flex;flex-direction:column;align-items:center;justify-content:center;
-    text-align:center;padding:6rem 1rem 4rem;
-    background:radial-gradient(circle at 50% 0%,rgba(100,181,246,.14) 0%,transparent 40%);
-  }
+  .hero{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6rem 1rem 4rem;background:radial-gradient(circle at 50% 0%,rgba(100,181,246,.14) 0%,transparent 40%)}
   .hero h1{font-size:clamp(2rem,5vw,3rem);margin-bottom:.5rem}
   .hero p{font-size:1.1rem;opacity:.8;margin-bottom:1.75rem}
-  .hero__poster{
-    position:relative;display:inline-block;border-radius:var(--radius);
-    overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.35);
-    transition:transform var(--transition),box-shadow var(--transition);
-    text-decoration:none;
-  }
+  .hero__poster{position:relative;display:inline-block;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 40px rgba(0,0,0,.35);transition:transform var(--transition),box-shadow var(--transition);text-decoration:none}
   .hero__poster:hover{transform:translateY(-6px) scale(1.03);box-shadow:0 25px 50px rgba(0,0,0,.45)}
   .hero__poster img{width:100%;max-width:700px;display:block}
-  .play-icon{
-    position:absolute;inset:0;display:flex;align-items:center;justify-content:center;
-    font-size:4rem;color:#fff;background:rgba(0,0,0,.35);
-    opacity:0;transition:opacity var(--transition);
-  }
+  .play-icon{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;font-size:4rem;color:#fff;background:rgba(0,0,0,.35);opacity:0;transition:opacity var(--transition)}
   .hero__poster:hover .play-icon{opacity:1}
   .hero__btns{display:flex;gap:1rem;margin-top:1.5rem}
 
   /* ---------- REELS GRID ---------- */
   #reels h2{text-align:center;font-size:2rem;margin:2rem 0 1rem;font-weight:700}
-  .grid{
-    display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));
-    gap:1.5rem;padding:3rem 1rem;max-width:1000px;margin:auto;
-  }
-  .card{
-    position:relative;background:var(--surface);
-    border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);
-    overflow:hidden;transition:transform var(--transition),box-shadow var(--transition);
-    display:block;text-decoration:none;color:var(--text);
-  }
+  .grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(260px,1fr));gap:1.5rem;padding:3rem 1rem;max-width:1000px;margin:auto}
+  .card{position:relative;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);overflow:hidden;transition:transform var(--transition),box-shadow var(--transition);display:block;text-decoration:none;color:var(--text)}
   .card img{width:100%;height:260px;object-fit:cover;display:block}
   .card__info{padding:.75rem 1rem;text-align:center;font-weight:600}
 
-  /* ----- glass rim + hover lift ----- */
-  .card::before{
-    content:"";position:absolute;inset:0;border-radius:var(--radius);
-    padding:1px;background:linear-gradient(135deg,var(--accent),var(--accent2));
-    -webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);
-    -webkit-mask-composite:xor;mask-composite:exclude;
-    opacity:0;transition:opacity var(--transition);filter:blur(1px);
-  }
+  /* glass rim */
+  .card::before{content:"";position:absolute;inset:0;border-radius:var(--radius);padding:1px;background:linear-gradient(135deg,var(--accent),var(--accent2));-webkit-mask:linear-gradient(#fff 0 0) content-box,linear-gradient(#fff 0 0);-webkit-mask-composite:xor;mask-composite:exclude;opacity:0;transition:opacity var(--transition);filter:blur(1px)}
   .card:hover::before{opacity:.8}
 
-  /* --- added hover interactions --- */
+  /* hover interactions (copy-paste from your request) */
   .card:hover{
     transform:translateY(-6px) scale(1.03);
     box-shadow:0 25px 50px rgba(0,0,0,.45);
@@ -125,31 +100,20 @@
   .contact-list a{color:var(--accent);font-weight:600;text-decoration:none}
 
   /* ---------- NOTION-LIKE FOOTER ---------- */
-  footer{
-    max-width:1000px;margin:2rem auto 1.5rem;
-    background:var(--surface);
-    border:1px solid rgba(255,255,255,.08);
-    border-radius:var(--radius);
-    padding:1.5rem 1rem;text-align:center;font-size:.85rem;
-    box-shadow:0 10px 30px rgba(0,0,0,.25);
-  }
+  footer{max-width:1000px;margin:2rem auto 1.5rem;background:var(--surface);border:1px solid rgba(255,255,255,.08);border-radius:var(--radius);padding:1.5rem 1rem;text-align:center;font-size:.85rem;box-shadow:0 10px 30px rgba(0,0,0,.25)}
 
   /* ---------- ANIMATIONS ---------- */
   .fade-up{opacity:0;transform:translateY(30px);transition:all .6s ease}
   .fade-up.visible{opacity:1;transform:translateY(0)}
 
   /* ---------- RESPONSIVE ---------- */
-  @media(max-width:600px){
-    .nav__links{display:none}
-    .hero{padding:4rem 1rem 3rem}
-  }
+  @media(max-width:600px){.nav__links{display:none}.hero{padding:4rem 1rem 3rem}}
   </style>
   <base target="_blank">
-<base target="_blank">
 </head>
 <body>
 
-<!-- ---------- NOTION-LIKE HEADER ---------- -->
+<!-- ---------- STICKY NOTION-LIKE HEADER ---------- -->
 <header>
   <a class="nav__logo" href="#">
     <img src="logo_circular.png" alt="logo"> 7xer.fx
@@ -183,23 +147,20 @@
 <section id="reels">
   <h2>Reels</h2>
   <div class="grid">
-    <!-- Featured Reel (local thumb) -->
     <a class="card fade-up" href="https://www.instagram.com/p/DOWcxJ9DWor/">
       <img src="rounded_13.png" alt="Featured Reel">
       <div class="card__info"><div class="card__title">Featured Reel</div></div>
     </a>
-    <!-- remaining reels -->
-    
-    <a class="card fade-up" href="https://www.instagram.com/reel/DC3hbx6gQiP/"><img src="rounded_3.png" alt="Reel 2"><div class="card__info"><div class="card__title">Reel One</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/C9zja0PAAF2/"><img src="rounded_4.png" alt="Reel 3"><div class="card__info"><div class="card__title">Reel Two</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/C9rbB1VA3Wg/"><img src="rounded_5.png" alt="Reel 4"><div class="card__info"><div class="card__title">Reel Three</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DDmCCrnIFRx/"><img src="rounded_6.png" alt="Reel 5"><div class="card__info"><div class="card__title">Reel Four</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/C94bYiVgukz/"><img src="rounded_7.png" alt="Reel 6"><div class="card__info"><div class="card__title">Reel Five</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DClnfk-gjtN/"><img src="rounded_8.png" alt="Reel 7"><div class="card__info"><div class="card__title">Reel Six</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DBgJMPQAW78/"><img src="rounded_9.png" alt="Reel 8"><div class="card__info"><div class="card__title">Reel Seven</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DBOuyGPAn69/"><img src="rounded_10.png" alt="Reel 9"><div class="card__info"><div class="card__title">Reel Eight</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DJCVWPrKSPI/"><img src="rounded_11.png" alt="Reel 10"><div class="card__info"><div class="card__title">Reel Nine</div></div></a>
-    <a class="card fade-up" href="https://www.instagram.com/reel/DBOud__gye8/"><img src="rounded_1.png" alt="Reel 11"><div class="card__info"><div class="card__title">Extra</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DC3hbx6gQiP/"><img src="rounded_3.png" alt="Reel 1"><div class="card__info"><div class="card__title">Reel One</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/C9zja0PAAF2/"><img src="rounded_4.png" alt="Reel 2"><div class="card__info"><div class="card__title">Reel Two</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/C9rbB1VA3Wg/"><img src="rounded_5.png" alt="Reel 3"><div class="card__info"><div class="card__title">Reel Three</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DDmCCrnIFRx/"><img src="rounded_6.png" alt="Reel 4"><div class="card__info"><div class="card__title">Reel Four</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/C94bYiVgukz/"><img src="rounded_7.png" alt="Reel 5"><div class="card__info"><div class="card__title">Reel Five</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DClnfk-gjtN/"><img src="rounded_8.png" alt="Reel 6"><div class="card__info"><div class="card__title">Reel Six</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DBgJMPQAW78/"><img src="rounded_9.png" alt="Reel 7"><div class="card__info"><div class="card__title">Reel Seven</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DBOuyGPAn69/"><img src="rounded_10.png" alt="Reel 8"><div class="card__info"><div class="card__title">Reel Eight</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DJCVWPrKSPI/"><img src="rounded_11.png" alt="Reel 9"><div class="card__info"><div class="card__title">Reel Nine</div></div></a>
+    <a class="card fade-up" href="https://www.instagram.com/reel/DBOud__gye8/"><img src="rounded_1.png" alt="Reel 10"><div class="card__info"><div class="card__title">Extra</div></div></a>
   </div>
 </section>
 
