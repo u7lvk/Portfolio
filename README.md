@@ -2,7 +2,7 @@
 
 # 🎬 <span style="color:#58a6ff;">7xer.fx</span> — <span style="color:#c778dd;">Video Editing Portfolio</span>
 
-Welcome to my <strong>personal video editing portfolio</strong>, showcasing a curated collection of sync edits, VFX, and anime-inspired reels — all crafted with passion and precision.
+Welcome to my <strong>personal video editing portfolio</strong>, showcasing a curated collection of sync edits, VFX, and anime-inspired reels, all crafted with passion and precision.
 
 ---
 
